@@ -85,6 +85,8 @@ export class CreateQuizComponent implements OnInit {
   }
 
   create() {
+    this.putIndexes(this.quiz);
+    console.log(this.quiz);
     this.quiz.dueDate.setHours(parseInt(this.hour.split(':')[0]));
     this.quiz.dueDate.setMinutes(parseInt(this.hour.split(':')[1]));
     if (this.quiz.dueDate <= new Date()) {

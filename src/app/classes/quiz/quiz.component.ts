@@ -64,11 +64,12 @@ export class QuizComponent implements OnInit {
   validDate() {
     if (!this.quiz)
       return false;
-    return new Date(this.quiz.dueDate) > new Date();
+    return (new Date(this.quiz.dueDate) > new Date());
   }
 
   changeChoiceId(answer, alternatives) {
-    answer.choiceId = alternatives[answer.choice - 1].alternativeId;
+    console.log('wut:' + alternatives[Number(answer.choice) - 1].alternativeId);
+    answer.choiceId = alternatives[Number(answer.choice) - 1].alternativeId;
     console.log('choosen:' + answer.choiceId);
   }
 
